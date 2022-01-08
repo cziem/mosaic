@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import SearchBar from "../../components/SearchBar";
 import StudentCard from "../../components/StudentCard";
 import { HomeStyles } from "./home.styles";
 
@@ -21,6 +22,8 @@ const Home = () => {
 
   return (
     <HomeStyles>
+      <SearchBar />
+
       {!!studentsList.length
         ? studentsList.map((student) => (
             <StudentCard className="student__card" student={student} />

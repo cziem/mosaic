@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeStyles = styled("div")`
   background: #fefefe;
-  padding: 0.5em;
+  padding: ${({ padding }) => padding || "0"};
   width: 700px;
   height: 80vh;
   overflow-x: auto;
