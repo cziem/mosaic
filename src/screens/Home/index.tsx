@@ -2,14 +2,20 @@ import axios from "axios";
 import React from "react";
 import SearchBar from "../../components/SearchBar";
 import StudentCard from "../../components/StudentCard";
+import { TStudent } from "../../components/types/type";
 import { HomeStyles } from "./home.styles";
 
-const Home = () => {
-  const [studentsList, setStudentsList] = React.useState([]);
+type TCallback = (...args: string[]) => void
+interface IResponse {
+  students: TStudent[]
+}
 
-  const fetchStudents = React.useCallback(async () => {
+const Home = () => {
+  const [studentsList, setStudentsList] = React.useState<TStudent[]>([]);
+
+  const fetchStudents = React.useCallback<TCallback>(async () => {
     try {
-      const { data } = await axios.get(
+      const {data} = await axios.get<IResponse>(
         "https://api.hatchways.io/assessment/students"
       );
       setStudentsList(data.students);

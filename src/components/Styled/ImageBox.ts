@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const ImageBox = styled("div")`
+interface IIBProps {
+  readonly height?: string
+  readonly width?: string
+}
+
+export const ImageBox = styled("div")<IIBProps>`
   height: ${({ height }) => height || "120px"};
   width: ${({ width }) => width || "120px"};
   border-radius: 50%;

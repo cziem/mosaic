@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-export const HomeStyles = styled("div")`
+interface IHSProps {
+  readonly padding?: string
+}
+export const HomeStyles = styled("div")<IHSProps>`
   background: #fefefe;
   padding: ${({ padding }) => padding || "0"};
   width: 700px;
@@ -20,4 +23,4 @@ export const HomeStyles = styled("div")`
       border-bottom-left-radius: 0.5em;
     }
   }
-`;
+`

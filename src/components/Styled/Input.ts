@@ -1,6 +1,13 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-export const Input = styled("input")`
+interface IInputProps {
+  readonly borderBottom?: boolean
+  readonly padding?: string
+  readonly position?: string
+  readonly top?: string
+}
+
+export const Input = styled("input")<IInputProps>`
   outline: none;
   border: none;
   border-bottom: ${({ borderBottom }) =>
@@ -23,4 +30,4 @@ export const Input = styled("input")`
   ::placeholder {
     color: #b3b3b3;
   }
-`;
+`

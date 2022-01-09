@@ -1,6 +1,13 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-export const Card = styled("div")`
+interface ICardProps {
+  readonly align?: string
+  readonly justify?: string
+  readonly padding?: string
+  readonly direction?: string
+}
+
+export const Card = styled("div")<ICardProps>`
   background: #fefefe;
   border-bottom: 1px solid #eee;
   display: flex;
@@ -20,11 +27,11 @@ export const Card = styled("div")`
     line-height: 1.6;
     padding-left: 0.5em;
   }
-`;
+`
 
-export const CardContent = styled("div")`
+export const CardContent = styled("div")<ICardProps>`
   display: flex;
   flex: 1;
   padding-left: 1em;
   flex-direction: ${({ direction }) => direction || "column"};
-`;
+`

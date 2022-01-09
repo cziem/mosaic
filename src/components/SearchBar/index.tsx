@@ -5,9 +5,10 @@ import { Input } from "../Styled/Input";
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  const handleChange = ({ target }) => {
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(target.value);
   };
+
   return (
     <Box position="sticky">
       <Input

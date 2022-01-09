@@ -3,7 +3,7 @@ import { computeAverage } from "../../lib/computeAverage";
 import { Card, CardContent } from "../Styled/Card";
 import { ImageBox } from "../Styled/ImageBox";
 
-const StudentCard = ({ student, ...props }) => {
+const StudentCard = ({ student, ...props }: {student: any, [x:string]: any}) => {
   return (
     <Card {...props}>
       <ImageBox>
