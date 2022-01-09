@@ -9,3 +9,7 @@ export type TStudent = {
   skill: string
   grades: number[]
 }
+
+export type TInputChange = ({
+  target,
+}: React.ChangeEvent<HTMLInputElement>) => void

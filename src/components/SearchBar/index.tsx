@@ -1,24 +1,24 @@
-import React from "react";
-import { Box } from "../Styled/Box";
-import { Input } from "../Styled/Input";
+import React from "react"
+import { Box } from "../Styled/Box"
+import { Input } from "../Styled/Input"
+import { TInputChange } from "../types/type"
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = React.useState("");
+interface ISBProps {
+  searchTerm: string
+  handleChange: TInputChange
+}
 
-  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(target.value);
-  };
-
+const SearchBar: React.FC<ISBProps> = ({ searchTerm, handleChange }) => {
   return (
     <Box position="sticky">
       <Input
-        placeholder="Search by name"
-        value={searchTerm}
+        placeholder="Search by name, email, skill or company"
         onChange={handleChange}
+        value={searchTerm}
         borderBottom
       />
     </Box>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar
