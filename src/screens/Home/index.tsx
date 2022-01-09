@@ -32,7 +32,7 @@ const Home = () => {
 
       {!!studentsList.length
         ? studentsList.map((student) => (
-            <StudentCard className="student__card" student={student} />
+            <StudentCard key={student.id} className="student__card" student={student} />
           ))
         : "Loading..."}
     </HomeStyles>

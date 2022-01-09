@@ -2,8 +2,14 @@ import React from "react";
 import { computeAverage } from "../../lib/computeAverage";
 import { Card, CardContent } from "../Styled/Card";
 import { ImageBox } from "../Styled/ImageBox";
+import { TStudent } from "../types/type";
 
-const StudentCard = ({ student, ...props }: {student: any, [x:string]: any}) => {
+interface ISCProps {
+  student: TStudent
+  [x:string]: any
+}
+
+const StudentCard = ({ student, ...props }: ISCProps) => {
   return (
     <Card {...props}>
       <ImageBox>

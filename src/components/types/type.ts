@@ -7,5 +7,5 @@ export type TStudent = {
   id: string
   pic: string
   skill: string
-  grades: string[]
+  grades: number[]
 }
